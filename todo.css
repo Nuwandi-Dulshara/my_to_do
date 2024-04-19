@@ -1,0 +1,212 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+
+body{
+    background:  #02673e;
+}
+
+.btn{
+    color: white;
+    background-color: black;
+    margin-left: 800pt;
+    margin-top: -90px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.site{
+    color: white;
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.wrapper{
+    background: #b3c481;
+    max-width: 500px;
+    margin-top: 10px;
+    margin-left: 400px;
+    border-radius: 7px;
+    padding: 28px 0;
+}
+
+.h1{
+    text-align: center;
+    
+}
+.task-input
+{
+    height: 52px;
+    padding: 0 25px;
+    position: relative;
+}
+
+.task-input img{
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+}
+
+.task-input input{
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    outline: none;
+    padding: 0 20px 0 53px;
+}
+
+.task-input input::placeholder{
+    color: #151515;
+}
+
+.controls, li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.controls{
+    padding: 18px 25px;
+    border-bottom: 1px solid #0aa244;
+    margin-top: 70px;
+}
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+
+.settings .task-menu{
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+    padding: 5px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 2;
+    right: -5px;
+    bottom: -65px;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+    transform-origin: top right;
+}
+
+
+.filters span{
+    margin: 0 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.filters span:first-child{
+    margin-left: 0;
+}
+
+.filters span.active{
+    color: #02452a;
+    font-weight: bold;
+}
+
+.controls .clear-btn{
+    outline: none;
+    border: none;
+    background: #035635;
+    color: #FFf;
+    padding: 7px 13px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.4s;
+}
+
+.controls .clear-btn:hover{
+    background: #8cccb2;
+}
+
+.task-menu li{
+    height: 25px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+    padding: 17px 15px;
+}
+
+.task-menu li:last-child{
+    margin-bottom: 0;
+}
+
+.task-menu li:hover{
+    background: #f5f5f5;
+}
+
+.task-menu li i{
+    padding-right: 8px;
+}
+
+.task-box{
+    margin: 20px 25px;
+}
+
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #054503;
+    transition: background-color 0.3s ease;
+    padding-bottom: 16px;
+    animation: fadeIn 0.5s ease;
+    
+
+}
+
+.task-box .task:last-child{
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.task label{
+    display: flex;
+}
+
+.task label input{
+    margin-top: 6px;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.task label p.checked{  
+    text-decoration: line-through;
+    color: #8e2a2a; 
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+
+.settings .task-menu.show{
+    transform: scale(1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; height: 0; padding: 0; margin: 0; }
+}
+
+.task.fade-out {
+    animation: fadeOut 0.5s ease forwards; /* 'forwards' keeps the end state */
+}
